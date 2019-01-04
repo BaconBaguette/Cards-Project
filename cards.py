@@ -24,5 +24,3 @@ class Widowmaker(Minion):
 class Raptor_Man(Minion):
 	def __init__(self):
 		super(Raptor_Man, self).__init__("Raptor Man", "Really more of a raptor boy.", 2, 2)
-
-This is a change I have made
