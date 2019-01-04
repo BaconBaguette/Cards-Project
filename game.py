@@ -1,3 +1,4 @@
+"""
 from modules import Minion, Player, AI
 from time import sleep
 import os
@@ -27,3 +28,16 @@ def play():
 		
 play()
 
+"""
+
+
+from cards import *
+from time import sleep
+
+print Brute()
+sleep(0.5)
+print
+print Widowmaker()
+sleep(0.5)
+print
+print Raptor_Man()
