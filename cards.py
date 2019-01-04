@@ -1,28 +1,22 @@
-from modules import Minion, Player, AI
-from time import sleep
-import os
+class Card(object):
+	def __init__(self, name):
+		self.name = name
 
-player1 = Player()
-opponent = AI()
+	def __repr__(self):
+		return self.name
 
-def turn():
-	player1.show_hand_summ()
-	sleep(1)
-	player1.boardstate()
-	sleep(2)
+class Minion(Card):
+	def __init__(self, name, attack, health, description):
+		self.name = name
+		self.attack = attack
+		self.health = health
+		self.description = description
+		self.summary = self.name + " , Att: " + str(self.attack) + " , HP: " + str(self.health)
 
-def play():
-	print "      Welcome to the game"
-	sleep(1)
-	print "Try to reduce the opponents health to zero"
-	print
-	sleep(1)
-	player1.create_hand()
-	opponent.create_hand()
-	player1.show_hand()
-	sleep(2)
-	while player1.is_alive() and opponent.is_alive():
-		turn()
-		sleep(5)
-		
-play()
+	def __repr__(self):
+		return " Name - %s \n Attack - %d \n Health - %d \n %s" % (self.name, self.attack, self.health, self.description)
+
+
+brute_minion = Minion("Brute", 1, 4, "Not as strong as he thinks he is.")
+raptor_man_minion = Minion("Raptor Man", 2, 2, "Really more of a raptor boy.")
+widowmaker_minion = Minion("Widowmaker", 3, 1, "Hope you don't find out why they call her that.")
