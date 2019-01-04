@@ -20,13 +20,6 @@ class Player(object):
 			for i in self.cards_in_hand:
 				print i, "\n"
 
-	def show_hand_summ(self):
-		if len(self.cards_in_hand)==0:
-			print "You have no cards in hand."
-		else:
-			for i in self.cards_in_hand:
-				print i.summary, "\n"
-
 	def boardstate(self):
 		print "You have %s in play with %d health remaining." % (self.card_in_play.name, self.card_in_play.health)
 
