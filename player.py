@@ -25,7 +25,8 @@ class Player(object):
 				print i, "\n"
 
 	def boardstate(self):
-		print "You have %s in play with %d health remaining." % (self.card_in_play.name, self.card_in_play.health)
+		for i in self.card_in_play:
+			print "You have %s in play with %d health remaining" % (i.name, i.health)
 
 
 	def minion_attack(self, opponent):

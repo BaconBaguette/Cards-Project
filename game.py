@@ -39,3 +39,6 @@ from time import sleep
 player1 = Player()
 player1.create_hand()
 player1.show_hand()
+sleep(1)
+player1.card_in_play.append(Brute())
+player1.boardstate()
