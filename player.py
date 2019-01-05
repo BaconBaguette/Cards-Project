@@ -1,3 +1,7 @@
+import cards
+from cards import *
+
+
 class Player(object):
 	def __init__(self):
 		self.cards_in_hand = []
@@ -8,9 +12,9 @@ class Player(object):
 		return self.health > 0
 		
 	def create_hand(self):
-		self.cards_in_hand.append(raptor_man_minion)
-		self.cards_in_hand.append(brute_minion)
-		self.cards_in_hand.append(widowmaker_minion)
+		self.cards_in_hand.append(Raptor_Man())
+		self.cards_in_hand.append(Brute())
+		self.cards_in_hand.append(Widowmaker())
 
 	def show_hand(self):
 		if len(self.cards_in_hand)==0:

@@ -30,14 +30,12 @@ play()
 
 """
 
-
+import player
+import cards
+from player import *
 from cards import *
 from time import sleep
 
-print Brute()
-sleep(0.5)
-print
-print Widowmaker()
-sleep(0.5)
-print
-print Raptor_Man()
+player1 = Player()
+player1.create_hand()
+player1.show_hand()
