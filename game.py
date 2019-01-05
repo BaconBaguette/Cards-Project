@@ -37,8 +37,10 @@ from cards import *
 from time import sleep
 
 player1 = Player()
+opponent = AI()
 player1.create_hand()
+opponent.create_hand()
 player1.show_hand()
+player1.card_in_play = Raptor_Man()
 sleep(1)
-player1.card_in_play.append(Brute())
-player1.boardstate()
+player1.minion_attack(opponent)

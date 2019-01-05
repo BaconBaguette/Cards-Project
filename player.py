@@ -6,16 +6,23 @@ class Player(object):
 	def __init__(self):
 		self.cards_in_hand = []
 		self.health = 30
-		self.card_in_play = []
+		self.card_in_play = ''
 		
+		"""Returns true if the player has more than 0 health remaining
+			Working"""
 	def is_alive(self):
 		return self.health > 0
-		
+
+		"""Adds the 3 cards currently in the game to the players hand
+			Working"""
 	def create_hand(self):
 		self.cards_in_hand.append(Raptor_Man())
 		self.cards_in_hand.append(Brute())
 		self.cards_in_hand.append(Widowmaker())
 
+		"""Prints to the console the cards currently in the players hand, or if empty, a statement telling them that.
+			Currently prints in the format defined by the Minion class __repr__
+			  Working"""
 	def show_hand(self):
 		if len(self.cards_in_hand)==0:
 			print "You have no cards in hand."
@@ -23,12 +30,14 @@ class Player(object):
 			print "Cards in hand\n"
 			for i in self.cards_in_hand:
 				print i, "\n"
-
+				
+		"""Working, would like to find a better way to define cards in play, probably a 'Board' class"""
 	def boardstate(self):
 		for i in self.card_in_play:
 			print "You have %s in play with %d health remaining" % (i.name, i.health)
 
-
+		"""Minion in play attacks, hitting the opponents minion if there is one, or the opponent if not
+			Working"""
 	def minion_attack(self, opponent):
 		if self.card_in_play == '':
 			print "You don't have anything to attack with."
@@ -47,12 +56,12 @@ class AI(object):
 	def __init__(self):
 		self.cards_in_hand = []
 		self.health = 10
-		self.card_in_play = widowmaker_minion
+		self.card_in_play = Brute()
 
 	def is_alive(self):
 		return self.health > 0
 		
 	def create_hand(self):
-		self.cards_in_hand.append(raptor_man_minion)
-		self.cards_in_hand.append(brute_minion)
-		self.cards_in_hand.append(widowmaker_minion)
+		self.cards_in_hand.append(Raptor_Man())
+		self.cards_in_hand.append(Brute())
+		self.cards_in_hand.append(Widowmaker())
