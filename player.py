@@ -52,11 +52,14 @@ class Player(object):
 			else:
 				print "%s attacked opponents %s for %d damage. %s has %d health remaining." % (self.card_in_play.name, opponent.card_in_play.name, self.card_in_play.attack, opponent.card_in_play.name, opponent.card_in_play.health)
 
+	def turn(self):
+		print "You have %s in play with %d health remaining." % (self.card_in_play.name, self.card_in_play.health)
+		
 class AI(object):
 	def __init__(self):
 		self.cards_in_hand = []
 		self.health = 10
-		self.card_in_play = Brute()
+		self.card_in_play = ''
 
 	def is_alive(self):
 		return self.health > 0

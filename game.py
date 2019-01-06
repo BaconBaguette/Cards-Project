@@ -36,11 +36,24 @@ from player import *
 from cards import *
 from time import sleep
 
-player1 = Player()
-opponent = AI()
-player1.create_hand()
-opponent.create_hand()
-player1.show_hand()
-player1.card_in_play = Raptor_Man()
-sleep(1)
-player1.minion_attack(opponent)
+def setup():
+	player1 = Player()
+	opponent = AI()
+	player1.create_hand()
+	opponent.create_hand()
+	
+def play():
+	player1 = Player()
+	opponent = AI()
+	player1.create_hand()
+	opponent.create_hand()
+	print "		Welcome to the game."
+	print "Try to reduce the opponents health to zero."
+	print "You start with the following cards in your hand"
+	for i in player1.cards_in_hand:
+		if getattr(i, "type") == "minion":
+			print i
+			print i.description
+			print
+	
+play()
