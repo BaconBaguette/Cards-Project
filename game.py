@@ -51,9 +51,8 @@ def play():
 	print "Try to reduce the opponents health to zero."
 	print "You start with the following cards in your hand"
 	for i in player1.cards_in_hand:
-		if getattr(i, "type") == "minion":
-			print i
-			print i.description
-			print
+		print i
+		print i.description
+		print
 	
 play()
