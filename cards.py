@@ -2,6 +2,9 @@ class Card(object):
 	def __init__(self, name, description):
 		self.name = name
 		self.description = description
+		
+	def reset_card(self):
+		self.__init__()
 
 class Minion(Card):
 	def __init__(self, name, description, attack, health, type):
@@ -12,19 +15,15 @@ class Minion(Card):
 
 	def __repr__(self):
 		return "%s \nAtt:%d  HP:%d" % (self.name, self.attack, self.health)
-		
-	def full_description(self):
-		print "%s\nAttack:%d\nHealth:%d\n%s" % (self.name, self.attack, self.health, self.description)
-		print
 
 
 class Brute(Minion):
 	def __init__(self):
 		super(Brute, self).__init__("Brute", "Not as strong as he thinks he is.", 1, 4, "minion")
 
-class Widowmaker(Minion):
+class C_B(Minion):
 	def __init__(self):
-		super(Widowmaker, self).__init__("Widowmaker", "Hope you don't find out why they call her that.", 3, 1, "minion")
+		super(C_B, self).__init__("Cheeto Bandito", "Sniff my fingers.", 3, 1, "minion")
 
 class Raptor_Man(Minion):
 	def __init__(self):
